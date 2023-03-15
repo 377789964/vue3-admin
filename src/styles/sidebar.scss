@@ -1,0 +1,45 @@
+#app {
+  .sidebar-container {
+    height: 100%;
+    background-color: $menuBg;
+    // menu未收起时样式
+    &-menu:not(.el-menu--collapse) {
+      width: $sideBarWidth;
+    }
+    .el-menu {
+      border: none;
+      background-color: $menuBg !important;
+    }
+    .el-menu-item {
+      color: $menuText;
+    }
+    .el-menu-item.is-active {
+      color: $menuActiveText;
+    }
+    // 菜单收起时的样式调整
+    .el-menu--collapse {
+      // 隐藏submenu title
+      .submenu-title {
+        display: none;
+      }
+    }
+
+    .el-sub-menu {
+      .el-sub-menu__title {
+        color: $menuText;
+      }
+      .el-menu {
+        .el-menu-item {
+          background-color: $subMenuBg !important;
+          color: $menuText;
+          &:hover {
+            background-color: $subMenuHover !important;
+          }
+        }
+        .el-menu-item.is-active {
+          color: $menuActiveText;
+        }
+      }
+    }
+  }
+}
