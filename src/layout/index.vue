@@ -5,12 +5,13 @@
     </div>
     <div class="main-container">
       <div clas="header">
-        <div class="navbar">navbar</div>
+        <navbar></navbar>
         <div class="tags-view">tagsview</div>
       </div>
       <div clas="app-main">
-        <h2>app mian</h2>
-        <router-view></router-view>
+        <!-- <h2>app mian</h2> -->
+        <!-- <router-view></router-view> -->
+        <app-main></app-main>
       </div>
     </div>
   </div>

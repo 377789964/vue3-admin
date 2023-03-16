@@ -7,6 +7,11 @@
       class-name="custom-class"
       @click="sayHai"
     ></svg-icon>
+    <br />
+    <br />
+    <br />
+    <input type="text" />
+    <el-button>按钮</el-button>
   </div>
 </template>
 

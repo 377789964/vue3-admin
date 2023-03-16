@@ -1,17 +1,19 @@
 <template>
   <div class="sidebar-item-container" v-if="!item.meta || !item.meta.hidden">
-    <template v-if="theOnlyOneChildRoute">
-      <el-menu-item
+    <template v-if="theOnlyOneChildRoute && !alwaysShowRootMenu">
+      <sidebar-item-link
+        :to="resolvePath(theOnlyOneChildRoute.path)"
         v-if="theOnlyOneChildRoute.meta"
-        :index="resolvePath(theOnlyOneChildRoute.path)"
       >
-        <el-icon v-if="icon">
-          <svg-icon class="menu-icon" :icon-class="icon"></svg-icon>
-        </el-icon>
-        <template #title>
-          {{ theOnlyOneChildRoute.meta?.title }}
-        </template>
-      </el-menu-item>
+        <el-menu-item :index="resolvePath(theOnlyOneChildRoute.path)">
+          <el-icon v-if="icon">
+            <svg-icon class="menu-icon" :icon-class="icon"></svg-icon>
+          </el-icon>
+          <template #title>
+            {{ theOnlyOneChildRoute.meta?.title }}
+          </template>
+        </el-menu-item>
+      </sidebar-item-link>
     </template>
     <el-sub-menu v-else :index="resolvePath(item.path)" teleported>
       <template #title>
@@ -36,6 +38,7 @@
 import type { PropType } from "vue"
 import type { RouteRecordRaw } from "vue-router"
 import path from "path-browserify"
+import { isExternal } from "@/utils/validate"
 const props = defineProps({
   item: {
     type: Object as PropType<RouteRecordRaw>,
@@ -95,6 +98,14 @@ const icon = computed(() => {
 // 利用path.resolve 根据父路径+子路径 解析成正确路径 子路径可能是相对的
 // resolvePath在模板中使用
 const resolvePath = (childPath: string) => {
+  if (isExternal(childPath)) {
+    return childPath
+  }
   return path.resolve(props.basePath, childPath)
 }
+
+const alwaysShowRootMenu = computed(
+  () => props.item.meta && props.item.meta.alwaysShow
+)
+// console.log(alwaysShowRootMenu, "alwaysShowRootMenu")
 </script>

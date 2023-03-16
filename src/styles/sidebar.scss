@@ -12,6 +12,9 @@
     }
     .el-menu-item {
       color: $menuText;
+      &:hover {
+        background-color: $subMenuHover !important;
+      }
     }
     .el-menu-item.is-active {
       color: $menuActiveText;
@@ -27,6 +30,9 @@
     .el-sub-menu {
       .el-sub-menu__title {
         color: $menuText;
+        &:hover {
+          background-color: $subMenuHover !important;
+        }
       }
       .el-menu {
         .el-menu-item {

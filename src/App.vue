@@ -1,13 +1,19 @@
-<script setup lang="ts">
-// import Counter from "./components/counter/index.vue"
-</script>
-
 <template>
   <!-- <router-link to="/home">首页</router-link> -->
   <!-- <router-link to="/about">关于</router-link> -->
   <!-- <Counter></Counter> -->
-  <router-view></router-view>
+  <el-config-provider :size="size">
+    <router-view></router-view>
+  </el-config-provider>
 </template>
+
+<script setup lang="ts">
+// import Counter from "./components/counter/index.vue"
+import { storeToRefs } from "pinia"
+import { useAppStore } from "./stores/app"
+const store = useAppStore()
+const { size } = storeToRefs(store)
+</script>
 
 <style scoped>
 .logo {

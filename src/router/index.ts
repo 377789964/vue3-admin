@@ -19,6 +19,7 @@ export const asyncRoutes: Array<RouteRecordRaw> = [
         meta: {
           title: "Documentation",
           icon: "documentation"
+          // hidden: true
         }
       }
     ]
@@ -36,6 +37,8 @@ export const asyncRoutes: Array<RouteRecordRaw> = [
         meta: {
           title: "Guide",
           icon: "guide"
+          // 默认加载Guide时，/documentation/index高亮显示
+          // activeMenu: "/documentation/index"
         }
       }
     ]
@@ -43,10 +46,11 @@ export const asyncRoutes: Array<RouteRecordRaw> = [
   {
     path: "/system",
     component: Layout,
-    redirect: "/system/user",
+    redirect: "/system/menu",
     meta: {
       title: "System",
-      icon: "lock"
+      icon: "lock",
+      alwaysShow: true
     },
     children: [
       {
@@ -56,6 +60,7 @@ export const asyncRoutes: Array<RouteRecordRaw> = [
         meta: {
           title: "Menu Management",
           icon: "list"
+          // hidden: true
         }
       },
       {
@@ -65,6 +70,7 @@ export const asyncRoutes: Array<RouteRecordRaw> = [
         meta: {
           title: "Role Management",
           icon: "list"
+          // hidden: true
         }
       },
       {
@@ -74,6 +80,21 @@ export const asyncRoutes: Array<RouteRecordRaw> = [
         meta: {
           title: "User Management",
           icon: "list"
+        }
+      }
+    ]
+  },
+  {
+    // 外链路由
+    path: "/external-link",
+    component: Layout,
+    children: [
+      {
+        path: "http://www.zhufengpeixun.com/",
+        redirect: "/",
+        meta: {
+          title: "External Link",
+          icon: "link"
         }
       }
     ]
