@@ -19,6 +19,7 @@ const store = useTagsView()
 
 const { cachedViews } = storeToRefs(store)
 const includes = computed(() => cachedViews.value as string[])
+console.log(includes, "includes")
 </script>
 
 <style lang="scss" scoped>

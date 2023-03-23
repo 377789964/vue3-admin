@@ -112,16 +112,45 @@ const constantRoutes: Array<RouteRecordRaw> = [
     children: [
       {
         path: "dashboard",
-        name: "dashboard",
+        name: "Dashboard",
         component: () => import("@/views/dashboard/index.vue"),
         meta: {
           title: "Dashboard",
           icon: "dashboard",
           affix: true,
-          noCache: true
+          noCache: false
         }
       }
     ]
+  },
+  {
+    path: "/redirect",
+    component: Layout,
+    meta: {
+      hidden: true
+    },
+    children: [
+      {
+        // 带参数的动态路由正则匹配 文档说明
+        // https://next.router.vuejs.org/zh/guide/essentials/routematchingsyntax.html#%E5%8F%AF%E9%87%8D%E5%A4%8D%E7%9A%84%E5%8F%82%E6%95%B0
+        path: "/redirect/:path(.*)", // 要匹配多级路由 应该加*号
+        component: () => import("@/views/redirect/index.vue")
+      }
+    ]
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    redirect: "/404",
+    meta: {
+      hidden: true
+    }
+  },
+  {
+    path: "/404",
+    component: () => import("@/views/error-page/404.vue"),
+    meta: {
+      hidden: true // 404 hidden掉
+    }
   }
 ]
 

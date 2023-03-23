@@ -40,12 +40,25 @@ export const useTagsView = defineStore("tag", () => {
     index > -1 && cachedViews.value.splice(index, 1)
   }
 
+  const delAllView = () => {
+    visitedViews.value = visitedViews.value.filter((tag) => tag.meta.affix)
+    cachedViews.value = []
+  }
+
+  const delOtherViews = (view: RouteLocationNormalized) => {
+    visitedViews.value = visitedViews.value.filter(
+      (tag) => tag.path === view.path
+    )
+  }
+
   return {
     visitedViews,
     addView,
     delView,
     cachedViews,
     addCachedView,
-    delCacheView
+    delCacheView,
+    delAllView,
+    delOtherViews
   }
 })
