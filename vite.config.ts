@@ -8,6 +8,7 @@ import Components from "unplugin-vue-components/vite"
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers"
 import ElementPlus from "unplugin-element-plus/vite"
 import DefineOptions from "unplugin-vue-define-options/vite"
+
 export default defineConfig({
   server: {
     proxy: {

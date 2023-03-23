@@ -55,6 +55,7 @@ export const asyncRoutes: Array<RouteRecordRaw> = [
     children: [
       {
         path: "menu",
+        name: "Menu Management",
         component: () =>
           import(/* webpackChunkName: "menu" */ "@/views/system/menu.vue"),
         meta: {
@@ -65,6 +66,7 @@ export const asyncRoutes: Array<RouteRecordRaw> = [
       },
       {
         path: "role",
+        name: "Role Management",
         component: () =>
           import(/* webpackChunkName: "role" */ "@/views/system/role.vue"),
         meta: {
@@ -75,6 +77,7 @@ export const asyncRoutes: Array<RouteRecordRaw> = [
       },
       {
         path: "user",
+        name: "User Management",
         component: () =>
           import(/* webpackChunkName: "user" */ "@/views/system/user.vue"),
         meta: {
@@ -105,7 +108,7 @@ const constantRoutes: Array<RouteRecordRaw> = [
   {
     path: "/",
     component: Layout,
-    redirect: "dashboard",
+    redirect: "/dashboard",
     children: [
       {
         path: "dashboard",
@@ -113,7 +116,9 @@ const constantRoutes: Array<RouteRecordRaw> = [
         component: () => import("@/views/dashboard/index.vue"),
         meta: {
           title: "Dashboard",
-          icon: "dashboard"
+          icon: "dashboard",
+          affix: true,
+          noCache: true
         }
       }
     ]

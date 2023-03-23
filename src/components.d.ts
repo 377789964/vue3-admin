@@ -10,8 +10,9 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AppMain: typeof import('./layout/components/AppMain.vue')['default']
+    Avatar: typeof import('./components/Avatar/index.vue')['default']
     Breadcrumb: typeof import('./components/Breadcrumb/index.vue')['default']
-    Counter: typeof import('./components/counter/index.vue')['default']
+    Counter: typeof import('./components/Counter/index.vue')['default']
     ElBreadcrum: typeof import('element-plus/es')['ElBreadcrum']
     ElBreadcrumb: typeof import('element-plus/es')['ElBreadcrumb']
     ElBreadcrumbItem: typeof import('element-plus/es')['ElBreadcrumbItem']
@@ -25,6 +26,7 @@ declare module '@vue/runtime-core' {
     ElIconProvider: typeof import('@element-plus/icons-vue')['Provider']
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
+    ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
     Hambuger: typeof import('./components/Hambuger/index.vue')['default']
@@ -33,10 +35,12 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Screenfull: typeof import('./components/Screenfull/index.vue')['default']
+    ScrollPanel: typeof import('./components/TagsView/ScrollPanel.vue')['default']
     Sidebar: typeof import('./layout/components/Sidebar/index.vue')['default']
     SidebarItem: typeof import('./layout/components/Sidebar/SidebarItem.vue')['default']
     SidebarItemLink: typeof import('./layout/components/Sidebar/SidebarItemLink.vue')['default']
     SizeSelect: typeof import('./components/SizeSelect/index.vue')['default']
     SvgIcon: typeof import('./components/SvgIcon/index.vue')['default']
+    TagsView: typeof import('./components/TagsView/index.vue')['default']
   }
 }

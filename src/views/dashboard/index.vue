@@ -16,6 +16,7 @@
 </template>
 
 <script setup lang="ts">
+defineOptions({ name: "Dashboard" })
 // import { getCurrentInstance } from "vue"
 const { proxy } = getCurrentInstance()
 console.log(proxy, "proxy")

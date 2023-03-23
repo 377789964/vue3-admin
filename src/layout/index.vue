@@ -6,7 +6,8 @@
     <div class="main-container">
       <div clas="header">
         <navbar></navbar>
-        <div class="tags-view">tagsview</div>
+        <!-- <div class="tags-view">tagsview</div> -->
+        <tags-view></tags-view>
       </div>
       <div clas="app-main">
         <!-- <h2>app mian</h2> -->
