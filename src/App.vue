@@ -11,8 +11,10 @@
 // import Counter from "./components/counter/index.vue"
 import { storeToRefs } from "pinia"
 import { useAppStore } from "./stores/app"
+import { useGenerateTheme } from "@/hooks/useGenerateTheme"
 const store = useAppStore()
 const { size } = storeToRefs(store)
+useGenerateTheme()
 </script>
 
 <style scoped>

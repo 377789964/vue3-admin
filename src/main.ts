@@ -13,6 +13,7 @@ import initSvgIcon from "@/icons/index"
 import "virtual:svg-icons-register"
 // 注册element-plus
 import installElementPlus from "./plugins/element"
+import "./permission"
 
 // console.log("pinia", pinia)
 

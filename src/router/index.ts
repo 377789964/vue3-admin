@@ -43,6 +43,120 @@ export const asyncRoutes: Array<RouteRecordRaw> = [
       }
     ]
   },
+  // {
+  //   path: "/guide",
+  //   component: Layout,
+  //   redirect: "/guide/index",
+  //   children: [
+  //     {
+  //       path: "index",
+  //       name: "Guide1",
+  //       component: () =>
+  //         import(/* webpackChunkName: "guide" */ "@/views/guide/index.vue"),
+  //       meta: {
+  //         title: "Guide1",
+  //         icon: "guide"
+  //         // 默认加载Guide时，/documentation/index高亮显示
+  //         // activeMenu: "/documentation/index"
+  //       }
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: "/guide",
+  //   component: Layout,
+  //   redirect: "/guide/index",
+  //   children: [
+  //     {
+  //       path: "index",
+  //       name: "Guide2",
+  //       component: () =>
+  //         import(/* webpackChunkName: "guide" */ "@/views/guide/index.vue"),
+  //       meta: {
+  //         title: "Guide2",
+  //         icon: "guide"
+  //         // 默认加载Guide时，/documentation/index高亮显示
+  //         // activeMenu: "/documentation/index"
+  //       }
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: "/guide",
+  //   component: Layout,
+  //   redirect: "/guide/index",
+  //   children: [
+  //     {
+  //       path: "index",
+  //       name: "Guide3",
+  //       component: () =>
+  //         import(/* webpackChunkName: "guide" */ "@/views/guide/index.vue"),
+  //       meta: {
+  //         title: "Guide3",
+  //         icon: "guide"
+  //         // 默认加载Guide时，/documentation/index高亮显示
+  //         // activeMenu: "/documentation/index"
+  //       }
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: "/guide",
+  //   component: Layout,
+  //   redirect: "/guide/index",
+  //   children: [
+  //     {
+  //       path: "index",
+  //       name: "Guide4",
+  //       component: () =>
+  //         import(/* webpackChunkName: "guide" */ "@/views/guide/index.vue"),
+  //       meta: {
+  //         title: "Guide4",
+  //         icon: "guide"
+  //         // 默认加载Guide时，/documentation/index高亮显示
+  //         // activeMenu: "/documentation/index"
+  //       }
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: "/guide",
+  //   component: Layout,
+  //   redirect: "/guide/index",
+  //   children: [
+  //     {
+  //       path: "index",
+  //       name: "Guide5",
+  //       component: () =>
+  //         import(/* webpackChunkName: "guide" */ "@/views/guide/index.vue"),
+  //       meta: {
+  //         title: "Guide5",
+  //         icon: "guide"
+  //         // 默认加载Guide时，/documentation/index高亮显示
+  //         // activeMenu: "/documentation/index"
+  //       }
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: "/guide",
+  //   component: Layout,
+  //   redirect: "/guide/index",
+  //   children: [
+  //     {
+  //       path: "index",
+  //       name: "Guide6",
+  //       component: () =>
+  //         import(/* webpackChunkName: "guide" */ "@/views/guide/index.vue"),
+  //       meta: {
+  //         title: "Guide6",
+  //         icon: "guide"
+  //         // 默认加载Guide时，/documentation/index高亮显示
+  //         // activeMenu: "/documentation/index"
+  //       }
+  //     }
+  //   ]
+  // },
   {
     path: "/system",
     component: Layout,
@@ -151,6 +265,11 @@ const constantRoutes: Array<RouteRecordRaw> = [
     meta: {
       hidden: true // 404 hidden掉
     }
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: () => import("@/views/login/index.vue")
   }
 ]
 

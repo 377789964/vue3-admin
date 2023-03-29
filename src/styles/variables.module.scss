@@ -18,6 +18,9 @@ $subMenuBg: #1f2d3d;
 $subMenuHover: #001528;
 $sideBarWidth: 210px;
 
+$settingPanelWidth: 260px;
+$theme: #409eff;
+
 // 导出变量提供给js来使用
 :export {
   menutext: $menuText;
@@ -28,4 +31,6 @@ $sideBarWidth: 210px;
   submenubg: $subMenuBg;
   submenuhover: $subMenuHover;
   sidebarwidth: $sideBarWidth;
+  theme: $theme;
+  settingPanelWidth: $settingPanelWidth;
 }

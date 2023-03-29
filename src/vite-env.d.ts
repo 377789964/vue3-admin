@@ -5,3 +5,7 @@ declare module "*.vue" {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
+
+declare module "css-color-function" {
+  export function convert(color: string): string;
+}

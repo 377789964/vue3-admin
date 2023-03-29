@@ -10,6 +10,10 @@
           v-for="(tag, index) in visitedViews"
           :key="index"
           :to="{ path: tag.path, query: tag.query }"
+          :style="{
+            backgroundColor: isActive(tag) ? themeColor : '',
+            borderColor: isActive(tag) ? themeColor : ''
+          }"
         >
           <el-dropdown
             trigger="contextmenu"
@@ -52,11 +56,16 @@
 
 <script lang="ts" setup>
 import { useTagsView } from "@/stores/tagsView"
+import { useSettingsStore } from "@/stores/settings"
 import { storeToRefs } from "pinia"
 import { RouteLocationNormalized, RouteRecordRaw } from "vue-router"
 import { CloseBold } from "@element-plus/icons-vue"
 import path from "path-browserify"
 import { routes } from "@/router"
+
+// 获取主题色
+const settingStore = useSettingsStore()
+const themeColor = computed(() => settingStore.settings.theme)
 
 const store = useTagsView()
 
